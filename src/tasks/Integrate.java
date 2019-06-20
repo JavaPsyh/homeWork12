@@ -7,8 +7,10 @@ public class Integrate {
         double tenPowSeven = Math.pow(10, 7);
         double step = (b - a) / tenPowSeven;
         double result = f.applyAsDouble(a) * step;
+        double currentStep;
         for (int i = 0; i < tenPowSeven; i++) {
-            result += f.applyAsDouble(a += step) * step;
+            currentStep = a += step;
+            result += f.applyAsDouble(currentStep) * step;
         }
         return result;
     }
